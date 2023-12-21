@@ -1,8 +1,8 @@
-export default function Cv({ name, location }) {
+export default function Cv({ bio, education, experience }) {
   return (
     <section>
-      <p>{name}</p>
-      <p>{location}</p>
+      <p>{bio.firstName}</p>
+      <p>{bio.lastName}</p>
     </section>
   );
 }
