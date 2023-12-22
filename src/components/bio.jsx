@@ -8,19 +8,50 @@ export default function Bio({ handleBio }) {
         First Name:{" "}
         <input
           type="text"
-          name="name"
+          name="firstName"
           id="firstName"
-          onChange={(e) => handleBio("firstName", e)}
+          onChange={(e) => handleBio(e)}
+          className="bg-slate-700"
+        />
+      </label>
+      <label htmlFor="lastName">
+        Last Name:{" "}
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          onChange={(e) => handleBio(e)}
           className="bg-slate-700"
         />
       </label>
       <label htmlFor="location">
-        Last Name:{" "}
+        City:{" "}
         <input
           type="text"
           name="location"
-          id="lastName"
-          onChange={(e) => handleBio("lastName", e)}
+          id="location"
+          onChange={(e) => handleBio(e)}
+          className="bg-slate-700"
+        />
+      </label>
+      <label htmlFor="country">
+        Country:{" "}
+        <input
+          type="text"
+          name="country"
+          id="country"
+          onChange={(e) => handleBio(e)}
+          className="bg-slate-700"
+        />
+      </label>
+
+      <label htmlFor="email">
+        Email:{" "}
+        <input
+          type="text"
+          name="email"
+          id="email"
+          onChange={(e) => handleBio(e)}
           className="bg-slate-700"
         />
       </label>

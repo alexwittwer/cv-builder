@@ -15,7 +15,7 @@ export default function App() {
     start: "2008",
     end: "2012",
     major: "Computer Science",
-    level: "Bachelors",
+    degree: "Bachelors",
   });
   const [work, setWork] = useState({
     work: "Amazon",
@@ -25,24 +25,21 @@ export default function App() {
     desc: "Directed company wide implementation of accessibility features to tap into a previously uncaptured market segment ",
   });
 
-  function handleBio(field, e) {
+  function handleBio(e) {
     const newBio = { ...bio };
-    newBio[field] = e.target.value;
-    console.log(newBio);
+    newBio[e.target.name] = e.target.value;
     setBio(newBio);
   }
 
-  function handleEducation(field, e) {
+  function handleEducation(e) {
     const newEducation = { ...education };
-    newEducation[field] = e.target.value;
-    console.log(newEducation);
+    newEducation[e.target.name] = e.target.value;
     setEducation(newEducation);
   }
 
-  function handleWork(field, e) {
+  function handleWork(e) {
     const newWork = { ...work };
-    newWork[field] = e.target.value;
-    console.log(newWork);
+    newWork[e.target.name] = e.target.value;
     setWork(newWork);
   }
 
