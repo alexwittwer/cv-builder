@@ -42,7 +42,7 @@ export default function App() {
   }
 
   function handleWork(e) {
-    updateWork((draft) => {
+    updateState((draft) => {
       draft.experience[e.target.name] = e.target.value;
     });
   }
