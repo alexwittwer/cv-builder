@@ -1,47 +1,50 @@
+import { useImmer } from "use-immer";
 import Cv from "./cv";
 import Form from "./form";
 import { useState } from "react";
 
 export default function App() {
-  const [bio, setBio] = useState({
+  const [state, updateState] = useImmer({
     firstName: "John",
     lastName: "Smith",
     location: "Philadelphia",
     country: "USA",
     email: "jsmith@gmail.com",
     phone: "850-867-5309",
-  });
-  const [education, setEducation] = useState({
-    university: "Temple University",
-    start: "2008",
-    end: "2012",
-    major: "Computer Science",
-    degree: "B.S.",
-  });
-  const [work, setWork] = useState({
-    work: "Amazon",
-    title: "Software Architect",
-    start: "2012",
-    end: "Present",
-    desc: "Directed company wide implementation of accessibility features to tap into a previously uncaptured market segment ",
+    education: {
+      university: "Temple University",
+      start: "2008",
+      end: "2012",
+      major: "Computer Science",
+      degree: "B.S.",
+      id: crypto.randomUUID(),
+    },
+    experience: {
+      work: "Amazon",
+      title: "Software Architect",
+      start: "2012",
+      end: "Present",
+      desc: "Directed company wide implementation of accessibility features to tap into a previously uncaptured market segment ",
+      id: crypto.randomUUID(),
+    },
   });
 
   function handleBio(e) {
-    const newBio = { ...bio };
-    newBio[e.target.name] = e.target.value;
-    setBio(newBio);
+    updateState((draft) => {
+      draft[e.target.name] = e.target.value;
+    });
   }
 
   function handleEducation(e) {
-    const newEducation = { ...education };
-    newEducation[e.target.name] = e.target.value;
-    setEducation(newEducation);
+    updateState((draft) => {
+      draft.education[e.target.name] = e.target.value;
+    });
   }
 
   function handleWork(e) {
-    const newWork = { ...work };
-    newWork[e.target.name] = e.target.value;
-    setWork(newWork);
+    updateWork((draft) => {
+      draft.experience[e.target.name] = e.target.value;
+    });
   }
 
   return (
@@ -51,7 +54,7 @@ export default function App() {
         handleWork={handleWork}
         handleEducation={handleEducation}
       />
-      <Cv bio={bio} work={work} education={education} />
+      <Cv info={state} />
     </section>
   );
 }

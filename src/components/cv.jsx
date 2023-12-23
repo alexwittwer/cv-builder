@@ -1,40 +1,40 @@
-export default function Cv({ bio, education, work }) {
+export default function Cv({ info = { info } }) {
   return (
     <section className="flex flex-col gap-5 shadow-2xl p-5 border-2 cv bg-slate-50">
       <div className="bio flex flex-col items-end justify-end">
         <div className="flex ">
           <p className="text-xl">
-            {bio.firstName} {bio.lastName}
+            {info.firstName} {info.lastName}
           </p>
         </div>
         <p className="text-sm">
-          {bio.location}, {bio.country}
+          {info.location}, {info.country}
         </p>
-        <p className="text-sm">{bio.email}</p>
-        <p className="text-sm">{bio.phone}</p>
+        <p className="text-sm">{info.email}</p>
+        <p className="text-sm">{info.phone}</p>
       </div>
       <p className="border-b-4 border-zinc-700"></p>
       <div className="education flex justify-between items-start">
         <div>
-          <p className="text-lg">{education.university}</p>
+          <p className="text-lg">{info.education.university}</p>
           <p className="text-sm">
-            {education.degree}, {education.major}
+            {info.education.degree}, {info.education.major}
           </p>
         </div>
         <div className="flex flex-col justify-end items-end">
           <p>
-            {education.start} — {education.end}
+            {info.education.start} — {info.education.end}
           </p>
         </div>
       </div>
       <p className="border-b-4 border-zinc-700"></p>
       <div className="work">
-        <p className="text-lg">{work.work}</p>
-        <p>{work.title}</p>
+        <p className="text-lg">{info.experience.work}</p>
+        <p>{info.experience.title}</p>
         <p>
-          {work.start} — {work.end}
+          {info.experience.start} — {info.experience.end}
         </p>
-        <p>{work.desc}</p>
+        <p>{info.experience.desc}</p>
       </div>
     </section>
   );
