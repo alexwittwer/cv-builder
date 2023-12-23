@@ -9,13 +9,14 @@ export default function App() {
     location: "Philadelphia",
     country: "USA",
     email: "jsmith@gmail.com",
+    phone: "850-867-5309",
   });
   const [education, setEducation] = useState({
     university: "Temple University",
     start: "2008",
     end: "2012",
     major: "Computer Science",
-    degree: "Bachelors",
+    degree: "B.S.",
   });
   const [work, setWork] = useState({
     work: "Amazon",
@@ -44,7 +45,7 @@ export default function App() {
   }
 
   return (
-    <section className="grid grid-cols-2">
+    <section className="content flex gap-8 justify-evenly items-center max-h-screen">
       <Form
         handleBio={handleBio}
         handleWork={handleWork}

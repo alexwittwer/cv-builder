@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: rgb(34, 34, 36);
+  font-size: 0.9rem;
+  max-height: 100vh;
+}
+
+.cv {
+  width: 594px;
+  height: 842px;
+}
+
+input {
+  color: black;
+}
+
+.add,
+.delete {
+  transition: 250ms;
+  box-sizing: border-box;
+}
+
+.delete:hover,
+.add:hover {
+  background-color: rgba(255, 21, 3, 0.9);
+  outline: white;
+  color: white;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .mobile {
+    display: block;
+  }
+
+  .content {
+    display: none;
+  }
+}

@@ -5,6 +5,9 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <div className="flex justify-center items-center">
+      <App />
+      <div className="mobile text-slate-50">Not available on mobile</div>
+    </div>
   </React.StrictMode>
 );
