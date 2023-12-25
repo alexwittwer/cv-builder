@@ -31,7 +31,6 @@ export default function App() {
   });
 
   function handleBio(e) {
-    console.log(state);
     updateState((draft) => {
       draft[e.target.name] = e.target.value;
     });
@@ -68,7 +67,6 @@ export default function App() {
   }
 
   function addEducation() {
-    console.log(state);
     updateState((draft) => {
       const newEducation = {
         university: "",

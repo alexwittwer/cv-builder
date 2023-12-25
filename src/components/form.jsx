@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Bio from "./bio";
 import Education from "./education";
 import Work from "./work";
@@ -32,12 +33,15 @@ export default function Form({
         />
         {additionalEducation.map((education) => {
           return (
-            <Education
-              key={education.id}
-              propkey={education.id}
-              handleEducation={handleAdditionalEducation}
-              removeEducation={removeEducation}
-            />
+            <div key={education.id}>
+              <Education
+                key={education.id}
+                propkey={education.id}
+                handleEducation={handleAdditionalEducation}
+                removeEducation={removeEducation}
+                added={true}
+              />
+            </div>
           );
         })}
         <button
@@ -54,14 +58,16 @@ export default function Form({
           removeExperience={removeExperience}
         />
         {additionalExperience.map((work) => {
-          console.log(work.id);
           return (
-            <Work
-              key={work.id}
-              propkey={work.id}
-              handleExperience={handleAdditionalExperience}
-              removeExperience={removeExperience}
-            />
+            <div key={work.id}>
+              <Work
+                key={work.id}
+                propkey={work.id}
+                handleExperience={handleAdditionalExperience}
+                removeExperience={removeExperience}
+                added={true}
+              />
+            </div>
           );
         })}
         <button

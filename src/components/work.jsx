@@ -1,4 +1,10 @@
-export default function Work({ propkey, handleExperience, removeExperience }) {
+/* eslint-disable react/prop-types */
+export default function Work({
+  propkey,
+  handleExperience,
+  removeExperience,
+  added,
+}) {
   return (
     <>
       <p>Experience</p>
@@ -62,15 +68,19 @@ export default function Work({ propkey, handleExperience, removeExperience }) {
             onChange={(e) => handleExperience(e, propkey)}
           />
         </FormWrapper>
-        <div className="flex mt-2 gap-5 justify-end items-center">
-          <button
-            type="button"
-            onClick={() => removeExperience(propkey)}
-            className="delete bg-slate-100 p-1 px-3 text-md text-slate-900 rounded-md"
-          >
-            Delete
-          </button>
-        </div>
+        {added ? (
+          <div className="flex my-1 gap-5 justify-end items-center">
+            <button
+              type="button"
+              onClick={() => removeExperience(propkey)}
+              className="delete bg-slate-100 p-1 px-3 text-md text-slate-900 rounded-md"
+            >
+              Delete
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
       </form>
     </>
   );

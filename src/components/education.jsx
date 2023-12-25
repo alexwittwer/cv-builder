@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
 export default function Education({
   propkey,
   handleEducation,
   removeEducation,
+  added,
 }) {
   return (
-    <>
+    <section>
       <p>Education</p>
       <form
         action=""
@@ -57,26 +59,38 @@ export default function Education({
         </FormWrapper>
         <FormWrapper>
           <label htmlFor="degree" className="">
-            Degree:{" "}
+            Degree conferred:{" "}
           </label>
-          <input
+          <select
             type="text"
             name="degree"
             id="degree"
             onChange={(e) => handleEducation(e, propkey)}
-          />
-        </FormWrapper>
-        <div className="flex mt-2 gap-5 justify-end items-center">
-          <button
-            type="button"
-            onClick={() => removeEducation(propkey)}
-            className="delete bg-slate-100 p-1 px-3 text-md text-slate-900 rounded-md"
+            className="text-slate-900"
           >
-            Delete
-          </button>
-        </div>
+            <option value="">None</option>
+            <option value="B.A.">B.A.</option>
+            <option value="B.S.">B.S.</option>
+            <option value="M.A.">M.A..</option>
+            <option value="M.S.">M.S.</option>
+            <option value="Ph.D">PhD</option>
+          </select>
+        </FormWrapper>
+        {added ? (
+          <div className="flex my-1 gap-5 justify-end items-center">
+            <button
+              type="button"
+              onClick={() => removeEducation(propkey)}
+              className="delete bg-slate-100 p-1 px-3 text-md text-slate-900 rounded-md"
+            >
+              Delete
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
       </form>
-    </>
+    </section>
   );
 }
 
