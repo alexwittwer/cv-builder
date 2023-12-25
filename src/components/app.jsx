@@ -1,7 +1,6 @@
 import { useImmer } from "use-immer";
 import Cv from "./cv";
 import Form from "./form";
-import { useState } from "react";
 
 export default function App() {
   const [state, updateState] = useImmer({
@@ -18,6 +17,7 @@ export default function App() {
       major: "Computer Science",
       degree: "B.S.",
       id: crypto.randomUUID(),
+      additionalEducation: [],
     },
     experience: {
       work: "Amazon",
@@ -26,10 +26,12 @@ export default function App() {
       end: "Present",
       desc: "Directed company wide implementation of accessibility features to tap into a previously uncaptured market segment ",
       id: crypto.randomUUID(),
+      additionalExperience: [],
     },
   });
 
   function handleBio(e) {
+    console.log(state);
     updateState((draft) => {
       draft[e.target.name] = e.target.value;
     });
@@ -41,11 +43,69 @@ export default function App() {
     });
   }
 
+  function handleAdditionalEducation(e, key) {
+    updateState((draft) => {
+      draft.education[e.target.name] = e.target.value;
+    });
+  }
+
   function handleWork(e) {
     updateState((draft) => {
       draft.experience[e.target.name] = e.target.value;
     });
   }
+
+  function handleAdditionalWork(e, key) {
+    updateState((draft) => {
+      const newDraft = draft.experience.additionalExperience; // need to acces the uuid key
+      newDraft[e.target.name] = e.target.value;
+    });
+  }
+
+  function addEducation() {
+    console.log(state);
+    updateState((draft) => {
+      const newEducation = {
+        university: "",
+        start: "",
+        end: "",
+        major: "",
+        degree: "",
+        id: crypto.randomUUID(),
+      };
+      draft.education.additionalEducation.push(newEducation);
+    });
+  }
+
+  function removeEducation() {
+    updateState((draft) => {
+      draft.education.additionalEducation.pop();
+    });
+  }
+
+  function addExperience() {
+    updateState((draft) => {
+      const newExperience = {
+        work: "",
+        title: "",
+        start: "",
+        end: "",
+        desc: "",
+        id: crypto.randomUUID(),
+      };
+      draft.experience.additionalExperience.push(newExperience);
+    });
+  }
+
+  function removeExperience() {
+    updateState((draft) => {
+      draft.experience.additionalExperience.pop();
+    });
+  }
+
+  function appendForm(id) {}
+
+  function deleteForm(id) {}
 
   return (
     <section className="content flex gap-8 justify-evenly items-center max-h-screen">
@@ -53,6 +113,15 @@ export default function App() {
         handleBio={handleBio}
         handleWork={handleWork}
         handleEducation={handleEducation}
+        handleAdditionalEducation={handleAdditionalEducation}
+        handleAdditionalWork={handleAdditionalWork}
+        addEducation={addEducation}
+        addExperience={addExperience}
+        removeEducation={removeEducation}
+        removeExperience={removeExperience}
+        appendForm={appendForm}
+        deleteForm={deleteForm}
+        state={state}
       />
       <Cv info={state} />
     </section>
