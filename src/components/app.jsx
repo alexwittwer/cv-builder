@@ -103,10 +103,6 @@ export default function App() {
     });
   }
 
-  function appendForm(id) {}
-
-  function deleteForm(id) {}
-
   return (
     <section className="content flex gap-8 justify-evenly items-center max-h-screen">
       <Form
@@ -119,8 +115,6 @@ export default function App() {
         addExperience={addExperience}
         removeEducation={removeEducation}
         removeExperience={removeExperience}
-        appendForm={appendForm}
-        deleteForm={deleteForm}
         state={state}
       />
       <Cv info={state} />

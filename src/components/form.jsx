@@ -18,7 +18,10 @@ export default function Form({
   const { additionalEducation } = state.education;
 
   return (
-    <section id="form" className="form flex flex-col gap-3 p-10 text-slate-100">
+    <section
+      id="form"
+      className="form flex flex-col gap-3 p-10 h-screen text-slate-100 overflow-y-scroll"
+    >
       <section>
         <Bio handleBio={handleBio} />
       </section>
