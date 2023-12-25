@@ -4,7 +4,7 @@ import Work from "./work";
 
 export default function Form({
   handleBio,
-  handleWork,
+  handleExperience,
   handleEducation,
   addEducation,
   addExperience,
@@ -49,14 +49,17 @@ export default function Form({
         </button>
       </section>
       <section className="flex flex-col">
-        <Work handleWork={handleWork} removeExperience={removeExperience} />
+        <Work
+          handleExperience={handleExperience}
+          removeExperience={removeExperience}
+        />
         {additionalExperience.map((work) => {
           console.log(work.id);
           return (
             <Work
               key={work.id}
               propkey={work.id}
-              handleWork={handleAdditionalExperience}
+              handleExperience={handleAdditionalExperience}
               removeExperience={removeExperience}
             />
           );

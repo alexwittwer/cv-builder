@@ -52,7 +52,7 @@ export default function App() {
     });
   }
 
-  function handleWork(e) {
+  function handleExperience(e) {
     updateState((draft) => {
       draft.experience[e.target.name] = e.target.value;
     });
@@ -118,7 +118,7 @@ export default function App() {
     <section className="content flex gap-8 justify-evenly items-center max-h-screen">
       <Form
         handleBio={handleBio}
-        handleWork={handleWork}
+        handleExperience={handleExperience}
         handleEducation={handleEducation}
         handleAdditionalEducation={handleAdditionalEducation}
         handleAdditionalExperience={handleAdditionalExperience}
