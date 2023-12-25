@@ -1,4 +1,4 @@
-export default function Work({ handleWork, removeExperience }) {
+export default function Work({ propkey, handleWork, removeExperience }) {
   return (
     <>
       <p>Experience</p>
@@ -65,7 +65,7 @@ export default function Work({ handleWork, removeExperience }) {
         <div className="flex mt-2 gap-5 justify-end items-center">
           <button
             type="button"
-            onClick={removeExperience}
+            onClick={() => removeExperience(propkey)}
             className="delete bg-slate-100 p-1 px-3 text-md text-slate-900 rounded-md"
           >
             Delete

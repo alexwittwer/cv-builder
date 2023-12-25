@@ -1,4 +1,8 @@
-export default function Education({ handleEducation, removeEducation }) {
+export default function Education({
+  propkey,
+  handleEducation,
+  removeEducation,
+}) {
   return (
     <>
       <p>Education</p>
@@ -65,7 +69,7 @@ export default function Education({ handleEducation, removeEducation }) {
         <div className="flex mt-2 gap-5 justify-end items-center">
           <button
             type="button"
-            onClick={removeEducation}
+            onClick={() => removeEducation(propkey)}
             className="delete bg-slate-100 p-1 px-3 text-md text-slate-900 rounded-md"
           >
             Delete

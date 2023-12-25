@@ -77,9 +77,12 @@ export default function App() {
     });
   }
 
-  function removeEducation() {
+  function removeEducation(key) {
     updateState((draft) => {
-      draft.education.additionalEducation.pop();
+      draft.education.additionalEducation =
+        draft.education.additionalEducation.filter(
+          (education) => education.id !== key
+        );
     });
   }
 
@@ -97,9 +100,12 @@ export default function App() {
     });
   }
 
-  function removeExperience() {
+  function removeExperience(key) {
     updateState((draft) => {
-      draft.experience.additionalExperience.pop();
+      draft.experience.additionalExperience =
+        draft.experience.additionalExperience.filter(
+          (experience) => experience.id !== key
+        );
     });
   }
 

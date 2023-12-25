@@ -30,10 +30,11 @@ export default function Form({
           handleEducation={handleEducation}
           removeEducation={removeEducation}
         />
-        {additionalEducation.map((education, index) => {
+        {additionalEducation.map((education) => {
           return (
             <Education
-              key={index}
+              key={education.id}
+              propkey={education.id}
               handleEducation={handleEducation}
               removeEducation={removeEducation}
             />
@@ -49,10 +50,12 @@ export default function Form({
       </section>
       <section className="flex flex-col">
         <Work handleWork={handleWork} removeExperience={removeExperience} />
-        {additionalExperience.map((work, index) => {
+        {additionalExperience.map((work) => {
+          console.log(work.id);
           return (
             <Work
-              key={index}
+              key={work.id}
+              propkey={work.id}
               handleWork={handleWork}
               removeExperience={removeExperience}
             />
