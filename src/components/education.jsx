@@ -19,7 +19,7 @@ export default function Education({
             type="text"
             name="university"
             id="university"
-            onChange={(e) => handleEducation(e)}
+            onChange={(e) => handleEducation(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -30,7 +30,7 @@ export default function Education({
             type="text"
             name="start"
             id="start"
-            onChange={(e) => handleEducation(e)}
+            onChange={(e) => handleEducation(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -41,7 +41,7 @@ export default function Education({
             type="text"
             name="end"
             id="end"
-            onChange={(e) => handleEducation(e)}
+            onChange={(e) => handleEducation(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -52,7 +52,7 @@ export default function Education({
             type="text"
             name="major"
             id="major"
-            onChange={(e) => handleEducation(e)}
+            onChange={(e) => handleEducation(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -63,7 +63,7 @@ export default function Education({
             type="text"
             name="degree"
             id="degree"
-            onChange={(e) => handleEducation(e)}
+            onChange={(e) => handleEducation(e, propkey)}
           />
         </FormWrapper>
         <div className="flex mt-2 gap-5 justify-end items-center">

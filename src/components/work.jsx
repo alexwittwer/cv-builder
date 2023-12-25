@@ -15,7 +15,7 @@ export default function Work({ propkey, handleWork, removeExperience }) {
             type="text"
             name="work"
             id="work"
-            onChange={(e) => handleWork(e)}
+            onChange={(e) => handleWork(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -26,7 +26,7 @@ export default function Work({ propkey, handleWork, removeExperience }) {
             type="text"
             name="title"
             id="title"
-            onChange={(e) => handleWork(e)}
+            onChange={(e) => handleWork(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -37,7 +37,7 @@ export default function Work({ propkey, handleWork, removeExperience }) {
             type="text"
             name="start"
             id="start"
-            onChange={(e) => handleWork(e)}
+            onChange={(e) => handleWork(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -48,7 +48,7 @@ export default function Work({ propkey, handleWork, removeExperience }) {
             type="text"
             name="end"
             id="end"
-            onChange={(e) => handleWork(e)}
+            onChange={(e) => handleWork(e, propkey)}
           />
         </FormWrapper>
         <FormWrapper>
@@ -59,7 +59,7 @@ export default function Work({ propkey, handleWork, removeExperience }) {
             type="text"
             name="desc"
             id="desc"
-            onChange={(e) => handleWork(e)}
+            onChange={(e) => handleWork(e, propkey)}
           />
         </FormWrapper>
         <div className="flex mt-2 gap-5 justify-end items-center">

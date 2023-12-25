@@ -26,7 +26,28 @@ export default function Cv({ info = { info } }) {
             {info.education.start} — {info.education.end}
           </p>
         </div>
+        {info.education.additionalEducation.map((edu) => {
+          return (
+            <div
+              key={edu.id}
+              className="education flex justify-between items-start"
+            >
+              <div>
+                <p className="text-lg">{edu.university}</p>
+                <p className="text-sm">
+                  {edu.degree}, {edu.major}
+                </p>
+              </div>
+              <div className="flex flex-col justify-end items-end">
+                <p>
+                  {edu.start} — {edu.end}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
+
       <p className="border-b-4 border-zinc-700"></p>
       <div className="work">
         <p className="text-lg">{info.experience.work}</p>
@@ -35,6 +56,18 @@ export default function Cv({ info = { info } }) {
           {info.experience.start} — {info.experience.end}
         </p>
         <p>{info.experience.desc}</p>
+        {info.experience.additionalExperience.map((experience) => {
+          return (
+            <div key={experience.id}>
+              <p className="text-lg">{experience.work}</p>
+              <p>{experience.title}</p>
+              <p>
+                {experience.start} — {experience.end}
+              </p>
+              <p>{experience.desc}</p>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

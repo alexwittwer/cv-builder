@@ -45,7 +45,10 @@ export default function App() {
 
   function handleAdditionalEducation(e, key) {
     updateState((draft) => {
-      draft.education[e.target.name] = e.target.value;
+      const education = draft.education.additionalEducation.find(
+        (edu) => edu.id === key
+      );
+      education[e.target.name] = e.target.value;
     });
   }
 
@@ -57,8 +60,10 @@ export default function App() {
 
   function handleAdditionalWork(e, key) {
     updateState((draft) => {
-      const newDraft = draft.experience.additionalExperience; // need to acces the uuid key
-      newDraft[e.target.name] = e.target.value;
+      const work = draft.experience.additionalExperience.find(
+        (exp) => exp.id === key
+      );
+      work[e.target.name] = e.target.value;
     });
   }
 

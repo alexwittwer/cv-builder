@@ -10,8 +10,8 @@ export default function Form({
   addExperience,
   removeEducation,
   removeExperience,
-  deleteForm,
-  addForm,
+  handleAdditionalWork,
+  handleAdditionalEducation,
   state,
 }) {
   const { additionalExperience } = state.experience;
@@ -35,7 +35,7 @@ export default function Form({
             <Education
               key={education.id}
               propkey={education.id}
-              handleEducation={handleEducation}
+              handleEducation={handleAdditionalEducation}
               removeEducation={removeEducation}
             />
           );
@@ -56,7 +56,7 @@ export default function Form({
             <Work
               key={work.id}
               propkey={work.id}
-              handleWork={handleWork}
+              handleWork={handleAdditionalWork}
               removeExperience={removeExperience}
             />
           );
