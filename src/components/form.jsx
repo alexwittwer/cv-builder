@@ -10,7 +10,7 @@ export default function Form({
   addExperience,
   removeEducation,
   removeExperience,
-  handleAdditionalWork,
+  handleAdditionalExperience,
   handleAdditionalEducation,
   state,
 }) {
@@ -56,7 +56,7 @@ export default function Form({
             <Work
               key={work.id}
               propkey={work.id}
-              handleWork={handleAdditionalWork}
+              handleWork={handleAdditionalExperience}
               removeExperience={removeExperience}
             />
           );

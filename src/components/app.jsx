@@ -58,7 +58,7 @@ export default function App() {
     });
   }
 
-  function handleAdditionalWork(e, key) {
+  function handleAdditionalExperience(e, key) {
     updateState((draft) => {
       const work = draft.experience.additionalExperience.find(
         (exp) => exp.id === key
@@ -121,7 +121,7 @@ export default function App() {
         handleWork={handleWork}
         handleEducation={handleEducation}
         handleAdditionalEducation={handleAdditionalEducation}
-        handleAdditionalWork={handleAdditionalWork}
+        handleAdditionalExperience={handleAdditionalExperience}
         addEducation={addEducation}
         addExperience={addExperience}
         removeEducation={removeEducation}
