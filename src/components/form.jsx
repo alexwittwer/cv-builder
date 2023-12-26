@@ -21,12 +21,12 @@ export default function Form({
   return (
     <section
       id="form"
-      className="form flex flex-col gap-3 p-10 h-screen text-slate-100 overflow-y-scroll"
+      className="form flex flex-col gap-2 p-8 h-screen text-slate-100 "
     >
-      <section>
+      <>
         <Bio handleBio={handleBio} />
-      </section>
-      <section className="flex flex-col">
+      </>
+      <div className="flex flex-col">
         <Education
           handleEducation={handleEducation}
           removeEducation={removeEducation}
@@ -51,8 +51,8 @@ export default function Form({
         >
           +
         </button>
-      </section>
-      <section className="flex flex-col">
+      </div>
+      <div className="flex flex-col">
         <Work
           handleExperience={handleExperience}
           removeExperience={removeExperience}
@@ -77,7 +77,7 @@ export default function Form({
         >
           +
         </button>
-      </section>
+      </div>
     </section>
   );
 }

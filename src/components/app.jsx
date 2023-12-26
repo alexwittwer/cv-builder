@@ -1,6 +1,7 @@
-import { useImmer } from "use-immer";
 import Cv from "./cv";
 import Form from "./form";
+import { useState } from "react";
+import { useImmer } from "use-immer";
 
 export default function App() {
   const [state, updateState] = useImmer({
@@ -29,6 +30,7 @@ export default function App() {
       additionalExperience: [],
     },
   });
+  const [active, setActive] = useState(false);
 
   function handleBio(e) {
     updateState((draft) => {
@@ -125,6 +127,7 @@ export default function App() {
         removeEducation={removeEducation}
         removeExperience={removeExperience}
         state={state}
+        setActive={setActive}
       />
       <Cv info={state} />
     </section>

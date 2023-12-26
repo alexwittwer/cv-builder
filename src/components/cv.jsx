@@ -9,7 +9,8 @@ function CVBio({ info }) {
         </p>
       </div>
       <p className="text-sm">
-        {info.location}, {info.country}
+        {info.location}
+        {info.location ? "," : ""} {info.country}
       </p>
       <p className="text-sm">{info.email}</p>
       <p className="text-sm">{info.phone}</p>

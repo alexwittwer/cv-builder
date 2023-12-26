@@ -8,6 +8,10 @@ body {
   max-height: 100vh;
 }
 
+.form {
+  overflow-y: auto;
+}
+
 .cv {
   width: 594px;
   height: 842px;
