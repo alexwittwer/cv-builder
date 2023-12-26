@@ -25,7 +25,7 @@ export default function App() {
       title: "Software Architect",
       start: "2012",
       end: "Present",
-      desc: "Directed company wide implementation of accessibility features to tap into a previously uncaptured market segment ",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       id: crypto.randomUUID(),
       additionalExperience: [],
     },
@@ -115,21 +115,23 @@ export default function App() {
   }
 
   return (
-    <section className="content flex gap-8 justify-evenly items-center max-h-screen">
-      <Form
-        handleBio={handleBio}
-        handleExperience={handleExperience}
-        handleEducation={handleEducation}
-        handleAdditionalEducation={handleAdditionalEducation}
-        handleAdditionalExperience={handleAdditionalExperience}
-        addEducation={addEducation}
-        addExperience={addExperience}
-        removeEducation={removeEducation}
-        removeExperience={removeExperience}
-        state={state}
-        setActive={setActive}
-      />
-      <Cv info={state} />
-    </section>
+    <div className="flex justify-center items-center">
+      <section className="content flex gap-8 justify-evenly items-center max-h-screen">
+        <Form
+          handleBio={handleBio}
+          handleExperience={handleExperience}
+          handleEducation={handleEducation}
+          handleAdditionalEducation={handleAdditionalEducation}
+          handleAdditionalExperience={handleAdditionalExperience}
+          addEducation={addEducation}
+          addExperience={addExperience}
+          removeEducation={removeEducation}
+          removeExperience={removeExperience}
+          state={state}
+        />
+        <Cv info={state} />
+        <div className="mobile text-slate-50">Not available on mobile</div>
+      </section>
+    </div>
   );
 }

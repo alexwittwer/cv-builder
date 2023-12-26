@@ -1,16 +1,24 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import caret from "../assets/caret.png";
+import upcaret from "../assets/upcaret.png";
 
-export default function Bio({ handleBio }) {
-  const [active, setActive] = useState(false);
+export default function Bio({ handleBio, info }) {
+  const [active, setActive] = useState(true);
 
   function updateActive() {
     return active ? setActive(false) : setActive(true);
   }
 
   return (
-    <>
-      <p onClick={updateActive}>Personal Info</p>
+    <div>
+      <h1
+        onClick={updateActive}
+        className="flex justify-between bio-header cursor-pointer rounded-t-md min-w-96"
+      >
+        <p>Personal Info</p>
+        <img src={active ? upcaret : caret} width={"30px"} />
+      </h1>
       {active ? (
         <form
           action=""
@@ -24,6 +32,7 @@ export default function Bio({ handleBio }) {
               type="text"
               name="firstName"
               id="firstName"
+              value={info.firstName}
               onChange={(e) => handleBio(e)}
             />
           </FormWrapper>
@@ -33,6 +42,7 @@ export default function Bio({ handleBio }) {
               type="text"
               name="lastName"
               id="lastName"
+              value={info.lastName}
               onChange={(e) => handleBio(e)}
             />
           </FormWrapper>
@@ -42,6 +52,7 @@ export default function Bio({ handleBio }) {
               type="text"
               name="location"
               id="location"
+              value={info.location}
               onChange={(e) => handleBio(e)}
             />
           </FormWrapper>
@@ -51,6 +62,7 @@ export default function Bio({ handleBio }) {
               type="text"
               name="country"
               id="country"
+              value={info.country}
               onChange={(e) => handleBio(e)}
             />
           </FormWrapper>
@@ -60,6 +72,7 @@ export default function Bio({ handleBio }) {
               type="text"
               name="email"
               id="email"
+              value={info.email}
               onChange={(e) => handleBio(e)}
             />
           </FormWrapper>
@@ -69,6 +82,7 @@ export default function Bio({ handleBio }) {
               type="text"
               name="phone"
               id="phone"
+              value={info.phone}
               onChange={(e) => handleBio(e)}
             />
           </FormWrapper>
@@ -76,7 +90,7 @@ export default function Bio({ handleBio }) {
       ) : (
         ""
       )}
-    </>
+    </div>
   );
 }
 

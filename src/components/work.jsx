@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import caret from "../assets/caret.png";
+import upcaret from "../assets/upcaret.png";
 
 export default function Work({
   propkey,
   handleExperience,
   removeExperience,
+  info,
   added,
 }) {
   const [active, setActive] = useState(false);
@@ -15,7 +18,15 @@ export default function Work({
 
   return (
     <>
-      <p onClick={updateActive}>Experience</p>
+      <h1
+        onClick={updateActive}
+        className={`flex justify-between education-header cursor-pointer min-w-96 ${
+          added ? "" : "rounded-t-md"
+        }`}
+      >
+        <p>Experience</p>
+        <img src={active ? upcaret : caret} width={"30px"} />
+      </h1>
       {active ? (
         <form
           action=""
@@ -30,6 +41,7 @@ export default function Work({
               type="text"
               name="work"
               id="work"
+              value={added ? info.work : info.experience.work}
               onChange={(e) => handleExperience(e, propkey)}
             />
           </FormWrapper>
@@ -41,6 +53,7 @@ export default function Work({
               type="text"
               name="title"
               id="title"
+              value={added ? info.title : info.experience.title}
               onChange={(e) => handleExperience(e, propkey)}
             />
           </FormWrapper>
@@ -52,6 +65,7 @@ export default function Work({
               type="text"
               name="start"
               id="start"
+              value={added ? info.start : info.experience.start}
               onChange={(e) => handleExperience(e, propkey)}
             />
           </FormWrapper>
@@ -63,6 +77,7 @@ export default function Work({
               type="text"
               name="end"
               id="end"
+              value={added ? info.end : info.experience.end}
               onChange={(e) => handleExperience(e, propkey)}
             />
           </FormWrapper>
@@ -70,10 +85,11 @@ export default function Work({
             <label htmlFor="desc" className="">
               Description:{" "}
             </label>
-            <input
+            <textarea
               type="text"
               name="desc"
               id="desc"
+              value={added ? info.desc : info.experience.desc}
               onChange={(e) => handleExperience(e, propkey)}
             />
           </FormWrapper>

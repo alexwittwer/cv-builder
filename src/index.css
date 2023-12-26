@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar-thumb {
+  background-color: rgb(48, 105, 112);
+}
+
+scrollbar-thumb {
+  background-color: rgb(48, 105, 112);
+}
+
 body {
   background-color: rgb(34, 34, 36);
   font-size: 0.9rem;
@@ -17,12 +25,18 @@ body {
   height: 842px;
 }
 
-input {
+input,
+textarea {
   color: black;
+}
+
+textarea {
+  width: 100%;
 }
 
 .add,
 .delete {
+  background-color: rgb(241, 241, 241);
   transition: 250ms;
   box-sizing: border-box;
 }
@@ -34,14 +48,28 @@ input {
 }
 
 .add:hover {
-  background-color: rgb(56, 240, 0);
+  background-color: rgb(190, 247, 255);
+}
+
+.bio-header,
+.education-header,
+.experience-header {
+  background-color: rgb(241, 241, 241);
+  color: black;
+  padding: 10px;
+}
+
+.bio-header:hover,
+.education-header:hover,
+.experience-header:hover {
+  background-color: rgb(190, 247, 255);
 }
 
 .mobile {
   display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 720px) {
   .mobile {
     display: block;
   }

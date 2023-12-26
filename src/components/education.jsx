@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import caret from "../assets/caret.png";
+import upcaret from "../assets/upcaret.png";
+
 export default function Education({
   propkey,
   handleEducation,
   removeEducation,
   added,
+  info,
 }) {
   const [active, setActive] = useState(false);
 
@@ -13,8 +17,16 @@ export default function Education({
   }
 
   return (
-    <div>
-      <p onClick={updateActive}>Education</p>
+    <>
+      <h1
+        onClick={updateActive}
+        className={`flex justify-between education-header cursor-pointer min-w-96 ${
+          added ? "" : "rounded-t-md"
+        }`}
+      >
+        <p>Education</p>
+        <img src={active ? upcaret : caret} width={"30px"} />
+      </h1>
       {active ? (
         <form
           action=""
@@ -29,6 +41,7 @@ export default function Education({
               type="text"
               name="university"
               id="university"
+              value={added ? info.university : info.education.university}
               onChange={(e) => handleEducation(e, propkey)}
             />
           </FormWrapper>
@@ -40,6 +53,7 @@ export default function Education({
               type="text"
               name="start"
               id="start"
+              value={added ? info.start : info.education.start}
               onChange={(e) => handleEducation(e, propkey)}
             />
           </FormWrapper>
@@ -51,6 +65,7 @@ export default function Education({
               type="text"
               name="end"
               id="end"
+              value={added ? info.end : info.education.end}
               onChange={(e) => handleEducation(e, propkey)}
             />
           </FormWrapper>
@@ -62,6 +77,7 @@ export default function Education({
               type="text"
               name="major"
               id="major"
+              value={added ? info.major : info.education.major}
               onChange={(e) => handleEducation(e, propkey)}
             />
           </FormWrapper>
@@ -73,6 +89,7 @@ export default function Education({
               type="text"
               name="degree"
               id="degree"
+              value={added ? info.degree : info.education.degree}
               onChange={(e) => handleEducation(e, propkey)}
               className="text-slate-900"
             >
@@ -101,7 +118,7 @@ export default function Education({
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 }
 

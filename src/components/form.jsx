@@ -24,12 +24,13 @@ export default function Form({
       className="form flex flex-col gap-2 p-8 h-screen text-slate-100 "
     >
       <>
-        <Bio handleBio={handleBio} />
+        <Bio handleBio={handleBio} info={state} />
       </>
       <div className="flex flex-col">
         <Education
           handleEducation={handleEducation}
           removeEducation={removeEducation}
+          info={state}
         />
         {additionalEducation.map((education) => {
           return (
@@ -39,6 +40,7 @@ export default function Form({
                 propkey={education.id}
                 handleEducation={handleAdditionalEducation}
                 removeEducation={removeEducation}
+                info={education}
                 added={true}
               />
             </div>
@@ -56,6 +58,7 @@ export default function Form({
         <Work
           handleExperience={handleExperience}
           removeExperience={removeExperience}
+          info={state}
         />
         {additionalExperience.map((work) => {
           return (
@@ -65,6 +68,7 @@ export default function Form({
                 propkey={work.id}
                 handleExperience={handleAdditionalExperience}
                 removeExperience={removeExperience}
+                info={work}
                 added={true}
               />
             </div>
