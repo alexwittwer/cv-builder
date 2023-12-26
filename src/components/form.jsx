@@ -31,6 +31,7 @@ export default function Form({
           handleEducation={handleEducation}
           removeEducation={removeEducation}
           info={state}
+          isActive={false}
         />
         {additionalEducation.map((education) => {
           return (
@@ -42,6 +43,7 @@ export default function Form({
                 removeEducation={removeEducation}
                 info={education}
                 added={true}
+                isActive={true}
               />
             </div>
           );
@@ -59,6 +61,7 @@ export default function Form({
           handleExperience={handleExperience}
           removeExperience={removeExperience}
           info={state}
+          isActive={false}
         />
         {additionalExperience.map((work) => {
           return (
@@ -70,6 +73,7 @@ export default function Form({
                 removeExperience={removeExperience}
                 info={work}
                 added={true}
+                isActive={true}
               />
             </div>
           );

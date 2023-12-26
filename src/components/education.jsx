@@ -9,8 +9,9 @@ export default function Education({
   removeEducation,
   added,
   info,
+  isActive = { isActive },
 }) {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(isActive);
 
   function updateActive() {
     return active ? setActive(false) : setActive(true);
