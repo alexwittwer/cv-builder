@@ -69,12 +69,27 @@ textarea {
   display: none;
 }
 
-@media screen and (max-width: 720px) {
-  .mobile {
-    display: block;
+@media screen and (max-width: 800px) {
+  .content {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    height: 100%;
   }
 
-  .content {
-    display: none;
+  #form {
+    height: auto;
+  }
+
+  #form h1 {
+    min-width: auto;
+  }
+
+  #form input {
+    max-width: 30ch;
+  }
+
+  .cv {
+    max-width: 95vw;
   }
 }
